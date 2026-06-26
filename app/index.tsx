@@ -1,20 +1,27 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, Text, View, Image } from "react-native";
+import { styles } from "../styles/styles";
+import { useRouter } from "expo-router";
+
+const logo = require("../assets/logotipo.png");
 
 export default function App() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
-      <Text>Hola</Text>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
+      <Image source={logo} style={styles.logo}></Image>
+      <Text style={styles.tittle}>
+        Bienvenido a cuentas DJ, da click para iniciar sesion
+      </Text>
+      <Pressable
+        style={styles.buttonPrincipal}
+        onPress={() => {
+          router.push("/general/login");
+        }}
+      >
+        <Text style={styles.buttonText}>Iniciar sesion</Text>
+      </Pressable>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
