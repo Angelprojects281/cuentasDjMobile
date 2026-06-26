@@ -66,6 +66,7 @@ export default function Login() {
       <TextInput
         style={styles.input}
         placeholder="usuario"
+        placeholderTextColor={"#292828"}
         value={idUsuarios}
         onChangeText={(e) => {
           setUsuario(e);
@@ -74,6 +75,7 @@ export default function Login() {
       <TextInput
         style={styles.input}
         placeholder="contraseña"
+        placeholderTextColor={"#292828"}
         value={contraseña}
         onChangeText={(e) => {
           setContraseña(e);

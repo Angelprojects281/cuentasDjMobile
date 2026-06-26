@@ -48,7 +48,12 @@ export default function () {
       <Pressable style={styles.buttonPrincipal}>
         <Text style={styles.buttonText}>Consultar registros</Text>
       </Pressable>
-      <Pressable style={styles.buttonPrincipal}>
+      <Pressable
+        style={styles.buttonPrincipal}
+        onPress={() => {
+          router.push("../general/changePassword");
+        }}
+      >
         <Text style={styles.buttonText}>Cambiar contraseña</Text>
       </Pressable>
       <Pressable style={styles.buttonSecundario}>
