@@ -55,8 +55,8 @@ export const styles = StyleSheet.create({
   },
 
   input: {
-    width: 150,
-    height: 60,
+    width: 180,
+    height: 70,
     maxHeight: 60,
     maxWidth: 150,
     backgroundColor: "#ffffff",
@@ -65,5 +65,43 @@ export const styles = StyleSheet.create({
     padding: 15,
     fontSize: 15,
     marginBottom: 50,
+  },
+
+  secundaryContainer: {
+    width: "85%",
+    flex: 1,
+    backgroundColor: "#2e3543",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: Constants.statusBarHeight,
+    height: "100%",
+    alignContent: "center",
+    borderWidth: 2,
+    borderStyle: "solid",
+    borderColor: "#ffffff",
+    borderRadius: 20,
+    paddingBottom: 15,
+  },
+
+  subttitle: {
+    color: "#ffffff",
+    fontSize: 20,
+    margin: 5,
+  },
+
+  bacheContainer: {
+    width: "85%",
+    flex: 1,
+    backgroundColor: "#2e3543",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: Constants.statusBarHeight,
+    height: 70,
+    alignContent: "center",
+    borderWidth: 2,
+    borderStyle: "solid",
+    borderTopColor: "#ffffff",
+    borderColor: "transparent",
+    marginBottom: 20,
   },
 });

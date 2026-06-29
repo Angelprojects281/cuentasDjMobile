@@ -40,7 +40,10 @@ export default function () {
       <StatusBar style="light" />
       <Image source={logo} style={styles.logo}></Image>
       <Text style={styles.tittle}>Bienvenido al panel de usuario regular</Text>
-      <Pressable style={styles.buttonPrincipal}>
+      <Pressable
+        style={styles.buttonPrincipal}
+        onPress={() => router.push("./newReg")}
+      >
         <Text style={styles.buttonText}>Nuevo registro</Text>
       </Pressable>
       <Pressable style={styles.buttonSecundario}>
