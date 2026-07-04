@@ -40,7 +40,10 @@ export default function () {
       <StatusBar style="light" />
       <Image source={logo} style={styles.logo}></Image>
       <Text style={styles.tittle}>Bienvenido al panel de usuario auditor</Text>
-      <Pressable style={styles.buttonPrincipal}>
+      <Pressable
+        style={styles.buttonPrincipal}
+        onPress={() => router.push("./searchActivity")}
+      >
         <Text style={styles.buttonText}>Consultar registro de actividades</Text>
       </Pressable>
       <Pressable style={styles.buttonSecundario}>
