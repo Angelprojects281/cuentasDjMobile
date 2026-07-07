@@ -1,13 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import {
-  View,
-  Text,
-  TextInput,
-  Pressable,
-  Image,
-  Alert,
-  ScrollView,
-} from "react-native";
+import { View, Text, Pressable, Image, Alert, ScrollView } from "react-native";
 import { styles } from "../../styles/styles";
 import { useState } from "react";
 import { Picker } from "@react-native-picker/picker";
@@ -21,8 +13,6 @@ interface Activity {
 }
 
 export default function Login() {
-  const router = useRouter();
-
   const [fechaInicial, setFechaInicial] = useState(new Date());
   const [fechaFinal, setFechaFinal] = useState(new Date());
   const [activityType, setActivityType] = useState<null | String>();

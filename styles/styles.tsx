@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingTop: Constants.statusBarHeight,
+    paddingBottom: 20,
     width: "100%",
     height: "100%",
     alignContent: "center",

@@ -43,7 +43,14 @@ export default function () {
         Bienvenido al panel de usuario administrador
       </Text>
       <Pressable style={styles.buttonPrincipal}>
-        <Text style={styles.buttonText}>Consultar usuarios</Text>
+        <Text
+          style={styles.buttonText}
+          onPress={() => {
+            router.push("./adminUsers");
+          }}
+        >
+          Consultar usuarios
+        </Text>
       </Pressable>
       <Pressable style={styles.buttonPrincipal}>
         <Text style={styles.buttonText}>Consultar registros</Text>
