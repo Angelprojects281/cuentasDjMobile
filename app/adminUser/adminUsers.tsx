@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { View, Text, Alert, Pressable, Image, ScrollView } from "react-native";
 import { styles } from "../../styles/styles";
 import { useState, useEffect } from "react";
+import { useRouter } from "expo-router";
 
 const logo = require("../../assets/logotipo.png");
 
@@ -12,7 +13,7 @@ interface Usuario {
 
 export default function () {
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
-
+  const router = useRouter();
   const ObtenerUsuarios = async () => {
     try {
       const res = await fetch("http://10.0.2.2:4000/api/listarUsuarios");
@@ -44,7 +45,10 @@ export default function () {
             </View>
           ))}
         </View>
-        <Pressable style={styles.buttonPrincipal}>
+        <Pressable
+          style={styles.buttonPrincipal}
+          onPress={() => router.push("./newUser")}
+        >
           <Text style={styles.buttonText}>Nuevo usuario</Text>
         </Pressable>
         <Pressable style={styles.buttonPrincipal}>
