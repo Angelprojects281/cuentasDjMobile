@@ -25,7 +25,9 @@ export default function () {
         return;
       }
       setUsuarios(data);
-    } catch (error) {}
+    } catch (error) {
+      Alert.alert("Error", "Ocurrió un error al obtener los usuarios.");
+    }
   };
 
   useEffect(() => {
@@ -52,7 +54,14 @@ export default function () {
           <Text style={styles.buttonText}>Nuevo usuario</Text>
         </Pressable>
         <Pressable style={styles.buttonPrincipal}>
-          <Text style={styles.buttonText}>Eliminar usuario</Text>
+          <Text
+            style={styles.buttonText}
+            onPress={() => {
+              router.push("./delUser");
+            }}
+          >
+            Eliminar usuario
+          </Text>
         </Pressable>
       </View>
     </ScrollView>

@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import { styles } from "../../styles/styles";
 import { useState } from "react";
-import { jsx } from "react/jsx-runtime";
 
 const logo = require("../../assets/logotipo.png");
 

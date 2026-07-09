@@ -4,6 +4,7 @@ import { styles } from "../../styles/styles";
 import { useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import { useRouter } from "expo-router";
+import * as SecureStore from "expo-secure-store";
 const logo = require("../../assets/logotipo.png");
 
 interface DecodedTokenPayload {
@@ -42,6 +43,7 @@ export default function Login() {
         return;
       }
 
+      await SecureStore.setItemAsync("token", data.token);
       const decodedToken = jwtDecode<DecodedTokenPayload>(data.token);
 
       if (decodedToken.rol === "admin") {
