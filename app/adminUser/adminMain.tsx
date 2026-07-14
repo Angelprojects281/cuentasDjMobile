@@ -52,7 +52,10 @@ export default function () {
           Consultar usuarios
         </Text>
       </Pressable>
-      <Pressable style={styles.buttonPrincipal}>
+      <Pressable
+        style={styles.buttonPrincipal}
+        onPress={() => router.push("./adminReg")}
+      >
         <Text style={styles.buttonText}>Consultar registros</Text>
       </Pressable>
       <Pressable

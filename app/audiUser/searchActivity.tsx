@@ -12,7 +12,7 @@ interface Activity {
   detalles: string;
 }
 
-export default function Login() {
+export default function () {
   const [fechaInicial, setFechaInicial] = useState(new Date());
   const [fechaFinal, setFechaFinal] = useState(new Date());
   const [activityType, setActivityType] = useState<null | String>();

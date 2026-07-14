@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
     paddingBottom: 20,
     width: "100%",
     height: "100%",
+    minHeight: "100%",
     alignContent: "center",
   },
 
@@ -82,11 +83,13 @@ export const styles = StyleSheet.create({
     borderColor: "#ffffff",
     borderRadius: 20,
     paddingBottom: 15,
+    marginBottom: 20,
+    padding: 15,
   },
 
   subttitle: {
     color: "#ffffff",
-    fontSize: 20,
+    fontSize: 18,
     margin: 5,
   },
 
