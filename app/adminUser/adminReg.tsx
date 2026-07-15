@@ -42,7 +42,7 @@ interface Bache {
   entregado_kilos: number;
 }
 
-export default function () {
+export default function adminReg() {
   type bache = {
     proveedor: string;
     lote: number;
@@ -98,7 +98,9 @@ export default function () {
 
       setProduccion(results[0]);
       setBaches(resultsB);
-    } catch (error) {}
+    } catch (error) {
+      Alert.alert("Error", "algo salio mal, intente mas tarde");
+    }
   };
 
   const handleEliminarRegistro = async () => {
@@ -196,40 +198,64 @@ export default function () {
 
         {produccion && (
           <View style={styles.secundaryContainer}>
-            <Text style={styles.subttitle}>Turno: {produccion.turno}</Text>
-            <Text style={styles.subttitle}>
-              Fecha: {produccion.fecha_prod.split("T")[0]}
-            </Text>
-            <Text style={styles.subttitle}>
-              Proveedor rinde: {produccion.proveedor_rinde}
-            </Text>
-            <Text style={styles.subttitle}>
-              Lote de rinde: {produccion.lote_rinde}
-            </Text>
-            <Text style={styles.subttitle}>
-              Canecas de rinde utilizadas: {produccion.num_canecas_rinde}
-            </Text>
-            <Text style={styles.subttitle}>
-              Litros de rinde utilizados: {produccion.litros_caneca_rinde}
-            </Text>
-            <Text style={styles.subttitle}>
-              Griego descolgado recibido: {produccion.griego_inicio}
-            </Text>
-            <Text style={styles.subttitle}>
-              Griego agitado recibido: {produccion.agitado_inicio}
-            </Text>
-            <Text style={styles.subttitle}>
-              Canecas de griego gastadas: {produccion.suma_baches}
-            </Text>
-            <Text style={styles.subttitle}>
-              Kilos de griego gastados: {produccion.kilos_baches_total}
-            </Text>
-            <Text style={styles.subttitle}>
-              Canecas agitadas entregadas: {produccion.agitadas_final}
-            </Text>
-            <Text style={styles.subttitle}>
-              Canecas descolgadas entregadas: {produccion.descolgadas_final}
-            </Text>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>Turno: {produccion.turno}</Text>
+            </View>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>
+                Fecha: {produccion.fecha_prod.split("T")[0]}
+              </Text>
+            </View>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>
+                Proveedor rinde: {produccion.proveedor_rinde}
+              </Text>
+            </View>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>
+                Lote de rinde: {produccion.lote_rinde}
+              </Text>
+            </View>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>
+                Canecas de rinde utilizadas: {produccion.num_canecas_rinde}
+              </Text>
+            </View>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>
+                Litros de rinde utilizados: {produccion.litros_caneca_rinde}
+              </Text>
+            </View>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>
+                Griego descolgado recibido: {produccion.griego_inicio}
+              </Text>
+            </View>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>
+                Griego agitado recibido: {produccion.agitado_inicio}
+              </Text>
+            </View>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>
+                Canecas de griego gastadas: {produccion.suma_baches}
+              </Text>
+            </View>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>
+                Kilos de griego gastados: {produccion.kilos_baches_total}
+              </Text>
+            </View>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>
+                Canecas agitadas entregadas: {produccion.agitadas_final}
+              </Text>
+            </View>
+            <View style={styles.secundaryContainer}>
+              <Text style={styles.subttitle}>
+                Canecas descolgadas entregadas: {produccion.descolgadas_final}
+              </Text>
+            </View>
 
             <Pressable
               style={styles.buttonPrincipal}

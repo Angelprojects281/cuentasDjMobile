@@ -7,7 +7,7 @@ import { useRouter } from "expo-router";
 
 const logo = require("../../assets/logotipo.png");
 
-export default function () {
+export default function newUser() {
   const [Rol, setRol] = useState<null | String>();
   const [idUsuarios, setIdUsuarios] = useState<null | String>();
   const [cNueva, setPassword] = useState<null | String>();
@@ -69,7 +69,9 @@ export default function () {
       );
 
       router.push("./adminUsers");
-    } catch (error) {}
+    } catch (error) {
+      Alert.alert("Error", "algo salio mal, intente mas tarde");
+    }
   };
 
   return (
@@ -77,7 +79,7 @@ export default function () {
       <StatusBar style={"light"}></StatusBar>
       <Image source={logo} style={styles.logo}></Image>
       <Text style={styles.tittle}>
-        Ingrese los datos para cambiar su contraseña:
+        Ingrese los datos para crear un usuario:
       </Text>
       <Picker
         selectedValue={Rol}
@@ -95,6 +97,7 @@ export default function () {
       <TextInput
         style={styles.input}
         placeholder="Usuario"
+        placeholderTextColor={"#292828"}
         onChangeText={(e) => {
           setIdUsuarios(e);
         }}
@@ -103,6 +106,7 @@ export default function () {
       <TextInput
         style={styles.input}
         placeholder="Contraseña"
+        placeholderTextColor={"#292828"}
         secureTextEntry={true}
         onChangeText={(e) => {
           setPassword(e);

@@ -12,7 +12,7 @@ interface Usuario {
   Rol: string;
 }
 
-export default function () {
+export default function delUser() {
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
   const [idUsuario, setIdUsuario] = useState<null | String>();
   const ObtenerUsuarios = async () => {
@@ -27,7 +27,7 @@ export default function () {
       }
       setUsuarios(data);
     } catch (error) {
-      Alert.alert("Error", "Ocurrió un error al obtener los usuarios.");
+      Alert.alert("Error", "algo salio mal, intente mas tarde");
     }
   };
 

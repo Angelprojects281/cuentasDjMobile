@@ -53,8 +53,8 @@ export default function Login() {
       } else {
         router.push("../audiUser/audiMain");
       }
-    } catch (_error) {
-      console.error("error inesperado, intente mas tarde");
+    } catch (error) {
+      Alert.alert("Error", "algo salio mal, intente mas tarde");
     }
   };
 

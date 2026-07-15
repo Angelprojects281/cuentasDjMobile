@@ -7,7 +7,7 @@ import { useCallback } from "react";
 
 const logo = require("../../assets/logotipo.png");
 
-export default function () {
+export default function audiMain() {
   const router = useRouter();
   const handleBack = () => {
     Alert.alert("Cerrar sesion", "Estas seguro que deseas cerrar sesion?", [

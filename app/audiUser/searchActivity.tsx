@@ -12,7 +12,7 @@ interface Activity {
   detalles: string;
 }
 
-export default function () {
+export default function searchActivity() {
   const [fechaInicial, setFechaInicial] = useState(new Date());
   const [fechaFinal, setFechaFinal] = useState(new Date());
   const [activityType, setActivityType] = useState<null | String>();
@@ -149,14 +149,17 @@ export default function () {
         >
           <Text style={styles.buttonText}>Consultar actividad</Text>
         </Pressable>
+
         <Text style={styles.tittle}>
           Lista de actividades: se han encontrado {results.length} resultados
         </Text>
         <View style={styles.secundaryContainer}>
           {results.map((result, index) => (
             <View key={index} style={styles.bacheContainer}>
-              <Text style={styles.subttitle}>Fecha y hora: {result.fecha}</Text>
-              <Text style={styles.subttitle}>lote: {result.detalles}</Text>
+              <Text style={styles.subttitle}>
+                Fecha: {result.fecha.split("T")[0]}
+              </Text>
+              <Text style={styles.subttitle}>detalles: {result.detalles}</Text>
             </View>
           ))}
         </View>

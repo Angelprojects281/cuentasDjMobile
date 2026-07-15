@@ -16,7 +16,7 @@ import { useRouter } from "expo-router";
 
 const logo = require("../../assets/logotipo.png");
 
-export default function Login() {
+export default function newReg() {
   type bache = {
     proveedor: string;
     lote: number;
@@ -86,7 +86,9 @@ export default function Login() {
           },
         ],
       );
-    } catch {}
+    } catch {
+      Alert.alert("Error", "algo salio mal, intente mas tarde");
+    }
   };
 
   const registro = async () => {
@@ -169,6 +171,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="proveedor de rinde"
+          placeholderTextColor={"#292828"}
           value={proveedorR}
           onChangeText={(e) => {
             setProveedorR(e);
@@ -178,6 +181,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="lote de rinde"
+          placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
             setLoteR(Number(e));
@@ -187,6 +191,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="canecas 20"
+          placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
             setCanecas20(Number(e));
@@ -196,6 +201,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="canecas 60"
+          placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
             setCanecas60(Number(e));
@@ -204,6 +210,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="descolgadas recibidas"
+          placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
             setCdrecibidas(Number(e));
@@ -212,6 +219,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="agitadas recibidas"
+          placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
             setCarecibidas(Number(e));
@@ -220,6 +228,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="descolgadas entregadas"
+          placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
             setCdEntragdas(Number(e));
@@ -228,6 +237,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="agitadas entregadas"
+          placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
             setCaEntragdas(Number(e));
@@ -238,6 +248,7 @@ export default function Login() {
           <TextInput
             style={styles.input}
             placeholder="proveedor"
+            placeholderTextColor={"#292828"}
             onChangeText={(e) => {
               setProveedor(e);
             }}
@@ -245,6 +256,7 @@ export default function Login() {
           <TextInput
             style={styles.input}
             placeholder="lote"
+            placeholderTextColor={"#292828"}
             keyboardType="number-pad"
             onChangeText={(e) => {
               setLote(Number(e));
@@ -254,6 +266,7 @@ export default function Login() {
           <TextInput
             style={styles.input}
             placeholder="numero de canecas"
+            placeholderTextColor={"#292828"}
             keyboardType="number-pad"
             onChangeText={(e) => {
               setCanecas(Number(e));

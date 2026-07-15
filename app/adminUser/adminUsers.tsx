@@ -11,7 +11,7 @@ interface Usuario {
   Rol: string;
 }
 
-export default function () {
+export default function adminUsers() {
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
   const router = useRouter();
   const ObtenerUsuarios = async () => {
@@ -26,7 +26,7 @@ export default function () {
       }
       setUsuarios(data);
     } catch (error) {
-      Alert.alert("Error", "Ocurrió un error al obtener los usuarios.");
+      Alert.alert("Error", "algo salio mal, intente mas tarde");
     }
   };
 

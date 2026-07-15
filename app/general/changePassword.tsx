@@ -13,7 +13,7 @@ import { useState } from "react";
 
 const logo = require("../../assets/logotipo.png");
 
-export default function Login() {
+export default function changePassword() {
   const [idUsuarios, setUsuario] = useState("");
   const [cNueva, setContraseña] = useState("");
   const [confirmC, setConfirm] = useState("");
@@ -111,6 +111,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="usuario"
+          placeholderTextColor={"#292828"}
           value={idUsuarios}
           onChangeText={(e) => {
             setUsuario(e);
@@ -119,6 +120,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="contraseña nueva"
+          placeholderTextColor={"#292828"}
           secureTextEntry={true}
           value={cNueva}
           onChangeText={(e) => {
@@ -128,6 +130,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="Confirmar contraseña"
+          placeholderTextColor={"#292828"}
           secureTextEntry={true}
           value={confirmC}
           onChangeText={(e) => {
@@ -137,6 +140,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="Codigo verificacion"
+          placeholderTextColor={"#292828"}
           secureTextEntry={false}
           value={codigo}
           onChangeText={(e) => {
