@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     alignContent: "center",
   },
 
-  tittle: {
+  title: {
     color: "#ffffff",
     fontSize: 30,
     textAlign: "center",
@@ -69,7 +69,7 @@ export const styles = StyleSheet.create({
     marginBottom: 50,
   },
 
-  secundaryContainer: {
+  secondaryContainer: {
     width: "85%",
     flex: 1,
     backgroundColor: "#2e3543",
@@ -87,7 +87,7 @@ export const styles = StyleSheet.create({
     padding: 15,
   },
 
-  subttitle: {
+  subtitle: {
     color: "#ffffff",
     fontSize: 18,
     margin: 5,

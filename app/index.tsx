@@ -11,8 +11,8 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="light" />
       <Image source={logo} style={styles.logo}></Image>
-      <Text style={styles.tittle}>
-        Bienvenido a cuentas DJ, da click para iniciar sesion
+      <Text style={styles.title}>
+        Bienvenido a Cuentas DJ. Haz clic para iniciar sesión.
       </Text>
       <Pressable
         style={styles.buttonPrincipal}
@@ -20,7 +20,7 @@ export default function App() {
           router.push("/general/login");
         }}
       >
-        <Text style={styles.buttonText}>Iniciar sesion</Text>
+        <Text style={styles.buttonText}>Iniciar sesión</Text>
       </Pressable>
     </View>
   );

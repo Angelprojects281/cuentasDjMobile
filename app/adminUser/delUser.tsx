@@ -27,7 +27,7 @@ export default function delUser() {
       }
       setUsuarios(data);
     } catch (error) {
-      Alert.alert("Error", "algo salio mal, intente mas tarde");
+      Alert.alert("Error", "Algo salió mal. Inténtelo más tarde.");
     }
   };
 
@@ -45,8 +45,8 @@ export default function delUser() {
     }
 
     Alert.alert(
-      "Deseas eliminar el usuario",
-      `Desea eliminar el usuario ${idUsuario}? Esta acción no se puede deshacer.`,
+      "¿Desea eliminar el usuario?",
+      `¿Desea eliminar el usuario ${idUsuario}? Esta acción no se puede deshacer.`,
       [
         { text: "Cancelar", style: "cancel" },
         {
@@ -89,7 +89,7 @@ export default function delUser() {
     <View style={styles.container}>
       <StatusBar style={"light"}></StatusBar>
       <Image source={logo} style={styles.logo}></Image>
-      <Text style={styles.tittle}>
+      <Text style={styles.title}>
         Seleccione el usuario que desea eliminar:
       </Text>
       <Picker

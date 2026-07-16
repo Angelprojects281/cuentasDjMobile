@@ -10,10 +10,10 @@ const logo = require("../../assets/logotipo.png");
 export default function adminMain() {
   const router = useRouter();
   const handleBack = () => {
-    Alert.alert("Cerrar sesion", "Estas seguro que deseas cerrar sesion?", [
+    Alert.alert("Cerrar sesión", "¿Está seguro de que desea cerrar sesión?", [
       { text: "Cancelar", style: "cancel" },
       {
-        text: "Cerrar sesion",
+        text: "Cerrar sesión",
         onPress: () => {
           router.push("../");
         },
@@ -39,7 +39,7 @@ export default function adminMain() {
     <View style={styles.container}>
       <StatusBar style="light" />
       <Image source={logo} style={styles.logo}></Image>
-      <Text style={styles.tittle}>
+      <Text style={styles.title}>
         Bienvenido al panel de usuario administrador
       </Text>
       <Pressable style={styles.buttonPrincipal}>
@@ -68,7 +68,7 @@ export default function adminMain() {
       </Pressable>
       <Pressable style={styles.buttonSecundario}>
         <Text style={styles.buttonText} onPress={handleBack}>
-          Cerrar sesion
+          Cerrar sesión
         </Text>
       </Pressable>
     </View>

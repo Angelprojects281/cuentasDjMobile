@@ -26,7 +26,7 @@ export default function adminUsers() {
       }
       setUsuarios(data);
     } catch (error) {
-      Alert.alert("Error", "algo salio mal, intente mas tarde");
+      Alert.alert("Error", "Algo salió mal. Inténtelo más tarde.");
     }
   };
 
@@ -38,12 +38,12 @@ export default function adminUsers() {
       <View style={styles.container}>
         <StatusBar style="light" />
         <Image source={logo} style={styles.logo}></Image>
-        <Text style={styles.tittle}>Bienvenido a la lista de usuarios: </Text>
-        <View style={styles.secundaryContainer}>
+        <Text style={styles.title}>Bienvenido a la lista de usuarios:</Text>
+        <View style={styles.secondaryContainer}>
           {usuarios.map((result, index) => (
             <View key={index} style={styles.bacheContainer}>
-              <Text style={styles.subttitle}>Usuario: {result.idUsuarios}</Text>
-              <Text style={styles.subttitle}>Rol: {result.Rol}</Text>
+              <Text style={styles.subtitle}>Usuario: {result.idUsuarios}</Text>
+              <Text style={styles.subtitle}>Rol: {result.Rol}</Text>
             </View>
           ))}
         </View>

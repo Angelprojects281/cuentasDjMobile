@@ -4,7 +4,6 @@ import { styles } from "../../styles/styles";
 import { useState } from "react";
 import { Picker } from "@react-native-picker/picker";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { useRouter } from "expo-router";
 
 const logo = require("../../assets/logotipo.png");
 
@@ -99,14 +98,14 @@ export default function adminReg() {
       setProduccion(results[0]);
       setBaches(resultsB);
     } catch (error) {
-      Alert.alert("Error", "algo salio mal, intente mas tarde");
+      Alert.alert("Error", "Algo salió mal. Inténtelo más tarde.");
     }
   };
 
   const handleEliminarRegistro = async () => {
     Alert.alert(
-      "Deseas eliminar el usuario",
-      `Desea eliminar este registro? Esta acción no se puede deshacer.`,
+      "¿Desea eliminar el registro?",
+      "Esta acción no se puede deshacer.",
       [
         { text: "Cancelar", style: "cancel" },
         {
@@ -154,7 +153,7 @@ export default function adminReg() {
       <View style={styles.container}>
         <StatusBar style={"light"}></StatusBar>
         <Image source={logo} style={styles.logo}></Image>
-        <Text style={styles.tittle}>
+        <Text style={styles.title}>
           Ingrese los datos para consultar el registro:
         </Text>
         <Picker
@@ -164,7 +163,7 @@ export default function adminReg() {
           }}
           style={styles.input}
         >
-          <Picker.Item label="seleccione turno" value="" />
+          <Picker.Item label="Seleccione un turno" value="" />
           <Picker.Item label="Turno 1" value="Turno 1" />
           <Picker.Item label="Turno 2" value="Turno 2" />
         </Picker>
@@ -175,7 +174,7 @@ export default function adminReg() {
             setPicker(true);
           }}
         >
-          <Text style={styles.buttonText}>seleccionar fecha</Text>
+          <Text style={styles.buttonText}>Seleccionar fecha</Text>
         </Pressable>
 
         {picker && (
@@ -199,63 +198,63 @@ export default function adminReg() {
         </Pressable>
 
         {produccion && (
-          <View style={styles.secundaryContainer}>
-            <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>Turno: {produccion.turno}</Text>
+          <View style={styles.secondaryContainer}>
+            <View style={styles.secondaryContainer}>
+              <Text style={styles.subtitle}>Turno: {produccion.turno}</Text>
             </View>
             <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>
+              <Text style={styles.subtitle}>
                 Fecha: {produccion.fecha_prod.split("T")[0]}
               </Text>
             </View>
             <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>
-                Proveedor rinde: {produccion.proveedor_rinde}
+              <Text style={styles.subtitle}>
+                Proveedor de rinde: {produccion.proveedor_rinde}
               </Text>
             </View>
             <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>
+              <Text style={styles.subtitle}>
                 Lote de rinde: {produccion.lote_rinde}
               </Text>
             </View>
             <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>
-                Canecas de rinde utilizadas: {produccion.num_canecas_rinde}
+              <Text style={styles.subtitle}>
+                Cañecas de rinde utilizadas: {produccion.num_canecas_rinde}
               </Text>
             </View>
             <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>
+              <Text style={styles.subtitle}>
                 Litros de rinde utilizados: {produccion.litros_caneca_rinde}
               </Text>
             </View>
             <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>
+              <Text style={styles.subtitle}>
                 Griego descolgado recibido: {produccion.griego_inicio}
               </Text>
             </View>
             <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>
+              <Text style={styles.subtitle}>
                 Griego agitado recibido: {produccion.agitado_inicio}
               </Text>
             </View>
             <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>
-                Canecas de griego gastadas: {produccion.suma_baches}
+              <Text style={styles.subtitle}>
+                Cañecas de griego gastadas: {produccion.suma_baches}
               </Text>
             </View>
             <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>
+              <Text style={styles.subtitle}>
                 Kilos de griego gastados: {produccion.kilos_baches_total}
               </Text>
             </View>
             <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>
-                Canecas agitadas entregadas: {produccion.agitadas_final}
+              <Text style={styles.subtitle}>
+                Cañecas agitadas entregadas: {produccion.agitadas_final}
               </Text>
             </View>
             <View style={styles.secundaryContainer}>
-              <Text style={styles.subttitle}>
-                Canecas descolgadas entregadas: {produccion.descolgadas_final}
+              <Text style={styles.subtitle}>
+                Cañecas descolgadas entregadas: {produccion.descolgadas_final}
               </Text>
             </View>
 
@@ -266,8 +265,8 @@ export default function adminReg() {
                   ? setMostrarBaches(false)
                   : setMostrarBaches(true);
                 mostrarBaches
-                  ? setText("mostrar baches")
-                  : setText("ocultar baches");
+                  ? setText("Mostrar baches")
+                  : setText("Ocultar baches");
               }}
             >
               <Text style={styles.buttonText}>{text}</Text>
@@ -285,20 +284,20 @@ export default function adminReg() {
           <View style={styles.secundaryContainer}>
             {baches.map((bache, index) => (
               <View key={index} style={styles.bacheContainer}>
-                <Text style={styles.subttitle}>
+                <Text style={styles.subtitle}>
                   Proveedor: {bache.proveedor}
                 </Text>
-                <Text style={styles.subttitle}>Lote: {bache.lote}</Text>
-                <Text style={styles.subttitle}>
-                  Canecas: {bache.canecas_bache}
+                <Text style={styles.subtitle}>Lote: {bache.lote}</Text>
+                <Text style={styles.subtitle}>
+                  Cañecas: {bache.canecas_bache}
                 </Text>
-                <Text style={styles.subttitle}>
+                <Text style={styles.subtitle}>
                   Kilos totales: {bache.kilos_bache}
                 </Text>
-                <Text style={styles.subttitle}>
+                <Text style={styles.subtitle}>
                   Griego entregado: {bache.griego_entregado}
                 </Text>
-                <Text style={styles.subttitle}>
+                <Text style={styles.subtitle}>
                   Kilos entregados: {bache.entregado_kilos}
                 </Text>
               </View>

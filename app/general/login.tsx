@@ -22,8 +22,8 @@ export default function Login() {
     try {
       if (!idUsuarios || !contraseña) {
         Alert.alert(
-          "Error al iniciar sesion",
-          "se debe ingresar todos los datos",
+          "Error al iniciar sesión",
+          "Debe ingresar todos los datos.",
         );
         return;
       }
@@ -39,7 +39,7 @@ export default function Login() {
       const data = await res.json();
 
       if (!res.ok) {
-        Alert.alert("Error al iniciar sesion", data.error);
+        Alert.alert("Error al iniciar sesión", data.error);
         return;
       }
 
@@ -54,7 +54,7 @@ export default function Login() {
         router.push("../audiUser/audiMain");
       }
     } catch (error) {
-      Alert.alert("Error", "algo salio mal, intente mas tarde");
+      Alert.alert("Error", "Algo salió mal. Inténtelo más tarde.");
     }
   };
 
@@ -62,12 +62,12 @@ export default function Login() {
     <View style={styles.container}>
       <StatusBar style="light" />
       <Image source={logo} style={styles.logo}></Image>
-      <Text style={styles.tittle}>
-        Bienvenido, a continuacion ingrese su usuario y contraseña:
+      <Text style={styles.title}>
+        Bienvenido. A continuación, ingrese su usuario y contraseña:
       </Text>
       <TextInput
         style={styles.input}
-        placeholder="usuario"
+        placeholder="Usuario"
         placeholderTextColor={"#292828"}
         value={idUsuarios}
         onChangeText={(e) => {
@@ -76,7 +76,7 @@ export default function Login() {
       ></TextInput>
       <TextInput
         style={styles.input}
-        placeholder="contraseña"
+        placeholder="Contraseña"
         placeholderTextColor={"#292828"}
         value={contraseña}
         onChangeText={(e) => {
@@ -85,7 +85,7 @@ export default function Login() {
         secureTextEntry={true}
       ></TextInput>
       <Pressable style={styles.buttonPrincipal} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Iniciar sesion</Text>
+        <Text style={styles.buttonText}>Iniciar sesión</Text>
       </Pressable>
     </View>
   );

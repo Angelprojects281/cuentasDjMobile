@@ -21,22 +21,25 @@ export default function changePassword() {
 
   const handleCodigo = async () => {
     if (!idUsuarios || !cNueva || !confirmC) {
-      Alert.alert("No se pudo solicitar el codigo", "faltan campos requeridos");
+      Alert.alert(
+        "No se pudo solicitar el código",
+        "Faltan campos requeridos.",
+      );
       return;
     }
 
     if (cNueva.length < 8) {
       Alert.alert(
-        "No se puedo solicitar el codigo",
-        "la contraseña es insegura, prueba con otra diferente",
+        "No se pudo solicitar el código",
+        "La contraseña es insegura; pruebe con otra distinta.",
       );
       return;
     }
 
     if (cNueva !== confirmC) {
       Alert.alert(
-        "No se pudo solicitar el codigo",
-        "las contraseñas no coinciden",
+        "No se pudo solicitar el código",
+        "Las contraseñas no coinciden.",
       );
       return;
     }
@@ -56,19 +59,19 @@ export default function changePassword() {
     const data = await res.json();
 
     if (!res.ok) {
-      Alert.alert("Error al enviar el codigo", data.error);
+      Alert.alert("Error al enviar el código", data.error);
       return;
     }
 
     Alert.alert(
-      "Codigo enviado correctamente",
-      "verifique el correo electronico",
+      "Código enviado correctamente",
+      "Verifique el correo electrónico.",
     );
   };
 
   const handleCambiar = async () => {
     if (!codigo) {
-      Alert.alert("Erro al cofirmar el codigo", "debes ingresar un codigo");
+      Alert.alert("Error al confirmar el código", "Debe ingresar un código.");
       return;
     }
     const res = await fetch("http://10.0.2.2:4000/api/verificarCodigo", {
@@ -85,13 +88,13 @@ export default function changePassword() {
     const data = await res.json();
 
     if (!res.ok) {
-      Alert.alert("Error al confirmar el codigo", data.error);
+      Alert.alert("Error al confirmar el código", data.error);
       return;
     }
 
     Alert.alert(
       "Contraseña actualizada correctamente",
-      "ya puede iniciar sesion con la nueva contraseña",
+      "Ya puede iniciar sesión con la nueva contraseña.",
     );
 
     setUsuario("");
@@ -105,12 +108,12 @@ export default function changePassword() {
       <View style={styles.container}>
         <StatusBar style={"light"}></StatusBar>
         <Image source={logo} style={styles.logo}></Image>
-        <Text style={styles.tittle}>
+        <Text style={styles.title}>
           Ingrese los datos para cambiar su contraseña:
         </Text>
         <TextInput
           style={styles.input}
-          placeholder="usuario"
+          placeholder="Usuario"
           placeholderTextColor={"#292828"}
           value={idUsuarios}
           onChangeText={(e) => {
@@ -119,7 +122,7 @@ export default function changePassword() {
         ></TextInput>
         <TextInput
           style={styles.input}
-          placeholder="contraseña nueva"
+          placeholder="Nueva contraseña"
           placeholderTextColor={"#292828"}
           secureTextEntry={true}
           value={cNueva}
@@ -139,7 +142,7 @@ export default function changePassword() {
         ></TextInput>
         <TextInput
           style={styles.input}
-          placeholder="Codigo verificacion"
+          placeholder="Código de verificación"
           placeholderTextColor={"#292828"}
           secureTextEntry={false}
           value={codigo}
@@ -149,7 +152,7 @@ export default function changePassword() {
         ></TextInput>
         <Pressable style={styles.buttonPrincipal}>
           <Text style={styles.buttonText} onPress={handleCodigo}>
-            Solicitar codigo
+            Solicitar código
           </Text>
         </Pressable>
         <Pressable style={styles.buttonPrincipal}>

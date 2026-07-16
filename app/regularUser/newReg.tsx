@@ -41,7 +41,7 @@ export default function newReg() {
 
   const handleRegistrarBache = () => {
     if (!proveedor || !lote || !canecas) {
-      Alert.alert("Error al registrar el  bache", "faltan campos requeridos");
+      Alert.alert("Error al registrar el bache", "Faltan campos requeridos.");
       return;
     }
     const nuevoBache = { proveedor, lote, canecas };
@@ -69,13 +69,13 @@ export default function newReg() {
         caEntregadas === null ||
         listaBaches.length === 0
       ) {
-        Alert.alert("Error al crear el registro", "faltan campos requeridos");
+        Alert.alert("Error al crear el registro", "Faltan campos requeridos.");
         return;
       }
 
       Alert.alert(
-        "Deseas guardar los datos registrados",
-        `guardando los datos para ${turno} el dia ${fecha.toLocaleDateString("es-CO")}`,
+        "¿Desea guardar los datos registrados?",
+        `Se guardarán los datos para ${turno} el día ${fecha.toLocaleDateString("es-CO")}.`,
         [
           { text: "Cancelar", style: "cancel" },
           {
@@ -87,7 +87,7 @@ export default function newReg() {
         ],
       );
     } catch {
-      Alert.alert("Error", "algo salio mal, intente mas tarde");
+      Alert.alert("Error", "Algo salió mal. Inténtelo más tarde.");
     }
   };
 
@@ -115,13 +115,13 @@ export default function newReg() {
     const data = await res.json();
 
     if (!res.ok) {
-      Alert.alert("Error al guardar el resgitro", data.error);
+      Alert.alert("Error al guardar el registro", data.error);
       return;
     }
 
     Alert.alert(
-      "Datos registrados exitosamente",
-      `se han registrado los datos del ${turno} para el dia ${fecha.toLocaleDateString("es-CO")}`,
+      "Datos registrados correctamente",
+      `Se han registrado los datos del ${turno} para el día ${fecha.toLocaleDateString("es-CO")}.`,
     );
     router.push("./regularMain");
   };
@@ -131,9 +131,7 @@ export default function newReg() {
       <View style={styles.container}>
         <StatusBar style={"light"}></StatusBar>
         <Image source={logo} style={styles.logo}></Image>
-        <Text style={styles.tittle}>
-          Ingrese los datos para cambiar su contraseña:
-        </Text>
+        <Text style={styles.title}>Ingrese los datos del registro:</Text>
         <Picker
           selectedValue={turno}
           onValueChange={(itemValue) => {
@@ -141,7 +139,7 @@ export default function newReg() {
           }}
           style={styles.input}
         >
-          <Picker.Item label="seleccione turno" value="" />
+          <Picker.Item label="Seleccione un turno" value="" />
           <Picker.Item label="Turno 1" value="Turno 1" />
           <Picker.Item label="Turno 2" value="Turno 2" />
         </Picker>
@@ -152,7 +150,7 @@ export default function newReg() {
             setPicker(true);
           }}
         >
-          <Text style={styles.buttonText}>seleccionar fecha</Text>
+          <Text style={styles.buttonText}>Seleccionar fecha</Text>
         </Pressable>
 
         {picker && (
@@ -170,7 +168,7 @@ export default function newReg() {
 
         <TextInput
           style={styles.input}
-          placeholder="proveedor de rinde"
+          placeholder="Proveedor de rinde"
           placeholderTextColor={"#292828"}
           value={proveedorR}
           onChangeText={(e) => {
@@ -180,7 +178,7 @@ export default function newReg() {
 
         <TextInput
           style={styles.input}
-          placeholder="lote de rinde"
+          placeholder="Lote de rinde"
           placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
@@ -190,7 +188,7 @@ export default function newReg() {
 
         <TextInput
           style={styles.input}
-          placeholder="canecas 20"
+          placeholder="Cañecas 20"
           placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
@@ -200,7 +198,7 @@ export default function newReg() {
 
         <TextInput
           style={styles.input}
-          placeholder="canecas 60"
+          placeholder="Cañecas 60"
           placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
@@ -209,7 +207,7 @@ export default function newReg() {
         ></TextInput>
         <TextInput
           style={styles.input}
-          placeholder="descolgadas recibidas"
+          placeholder="Descolgadas recibidas"
           placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
@@ -218,7 +216,7 @@ export default function newReg() {
         ></TextInput>
         <TextInput
           style={styles.input}
-          placeholder="agitadas recibidas"
+          placeholder="Agitadas recibidas"
           placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
@@ -227,7 +225,7 @@ export default function newReg() {
         ></TextInput>
         <TextInput
           style={styles.input}
-          placeholder="descolgadas entregadas"
+          placeholder="Descolgadas entregadas"
           placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
@@ -236,7 +234,7 @@ export default function newReg() {
         ></TextInput>
         <TextInput
           style={styles.input}
-          placeholder="agitadas entregadas"
+          placeholder="Agitadas entregadas"
           placeholderTextColor={"#292828"}
           keyboardType="number-pad"
           onChangeText={(e) => {
@@ -244,10 +242,10 @@ export default function newReg() {
           }}
         ></TextInput>
 
-        <View style={styles.secundaryContainer}>
+        <View style={styles.secondaryContainer}>
           <TextInput
             style={styles.input}
-            placeholder="proveedor"
+            placeholder="Proveedor"
             placeholderTextColor={"#292828"}
             onChangeText={(e) => {
               setProveedor(e);
@@ -255,7 +253,7 @@ export default function newReg() {
           ></TextInput>
           <TextInput
             style={styles.input}
-            placeholder="lote"
+            placeholder="Lote"
             placeholderTextColor={"#292828"}
             keyboardType="number-pad"
             onChangeText={(e) => {
@@ -265,7 +263,7 @@ export default function newReg() {
 
           <TextInput
             style={styles.input}
-            placeholder="numero de canecas"
+            placeholder="Número de cañecas"
             placeholderTextColor={"#292828"}
             keyboardType="number-pad"
             onChangeText={(e) => {
@@ -282,23 +280,23 @@ export default function newReg() {
             style={styles.buttonSecundario}
             onPress={handleBorrarBache}
           >
-            <Text style={styles.buttonText}>Borrar ultimo bache</Text>
+            <Text style={styles.buttonText}>Borrar el último bache</Text>
           </Pressable>
 
           {listaBaches.length > 0 && (
-            <Text style={styles.tittle}>Lista de baches</Text>
+            <Text style={styles.title}>Lista de baches</Text>
           )}
           {listaBaches.map((bache, index) => (
             <View key={index} style={styles.bacheContainer}>
-              <Text style={styles.subttitle}>proveedor: {bache.proveedor}</Text>
-              <Text style={styles.subttitle}>lote: {bache.lote}</Text>
-              <Text style={styles.subttitle}>Canecas: {bache.canecas}</Text>
+              <Text style={styles.subtitle}>Proveedor: {bache.proveedor}</Text>
+              <Text style={styles.subtitle}>Lote: {bache.lote}</Text>
+              <Text style={styles.subtitle}>Cañecas: {bache.canecas}</Text>
             </View>
           ))}
         </View>
 
         <Pressable style={styles.buttonPrincipal} onPress={HacerRegistro}>
-          <Text style={styles.buttonText}>Hacer Registro</Text>
+          <Text style={styles.buttonText}>Hacer registro</Text>
         </Pressable>
       </View>
     </ScrollView>

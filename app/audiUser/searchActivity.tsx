@@ -67,8 +67,8 @@ export default function searchActivity() {
       <View style={styles.container}>
         <StatusBar style={"light"}></StatusBar>
         <Image source={logo} style={styles.logo}></Image>
-        <Text style={styles.tittle}>
-          Ingrese los datos para cambiar su contraseña:
+        <Text style={styles.title}>
+          Ingrese los datos para consultar la actividad:
         </Text>
         <Picker
           selectedValue={activityType}
@@ -78,23 +78,23 @@ export default function searchActivity() {
           style={styles.input}
         >
           <Picker.Item label="Seleccione la actividad" value="" />
-          <Picker.Item label="Inicios de sesion" value="inicio_sesion" />
-          <Picker.Item label="Codigos generados" value="codigo_verificacion" />
+          <Picker.Item label="Inicios de sesión" value="inicio_sesion" />
+          <Picker.Item label="Códigos generados" value="codigo_verificacion" />
           <Picker.Item
             label="Cambios de contraseña"
             value="cambio_contraseña"
           />
           <Picker.Item label="Nuevos registros" value="nuevo_registro" />
           <Picker.Item
-            label="Eliminacion de registros"
+            label="Eliminación de registros"
             value="eliminar_registro"
           />
           <Picker.Item
-            label="Creacion de nuevos usuarios"
+            label="Creación de nuevos usuarios"
             value="nuevo_usuario"
           />
           <Picker.Item
-            label="Eliminacion de usuarios"
+            label="Eliminación de usuarios"
             value="eliminar_usuario"
           />
         </Picker>
@@ -105,7 +105,7 @@ export default function searchActivity() {
             setPickerInit(true);
           }}
         >
-          <Text style={styles.buttonText}>seleccionar fecha inicio</Text>
+          <Text style={styles.buttonText}>Seleccionar fecha de inicio</Text>
         </Pressable>
 
         {pickerInit && (
@@ -127,7 +127,7 @@ export default function searchActivity() {
             setPickerFinal(true);
           }}
         >
-          <Text style={styles.buttonText}>seleccionar fecha fin</Text>
+          <Text style={styles.buttonText}>Seleccionar fecha de fin</Text>
         </Pressable>
 
         {pickerFinal && (
@@ -150,16 +150,16 @@ export default function searchActivity() {
           <Text style={styles.buttonText}>Consultar actividad</Text>
         </Pressable>
 
-        <Text style={styles.tittle}>
-          Lista de actividades: se han encontrado {results.length} resultados
+        <Text style={styles.title}>
+          Lista de actividades: se han encontrado {results.length} resultados.
         </Text>
-        <View style={styles.secundaryContainer}>
+        <View style={styles.secondaryContainer}>
           {results.map((result, index) => (
             <View key={index} style={styles.bacheContainer}>
-              <Text style={styles.subttitle}>
+              <Text style={styles.subtitle}>
                 Fecha: {result.fecha.split("T")[0]}
               </Text>
-              <Text style={styles.subttitle}>detalles: {result.detalles}</Text>
+              <Text style={styles.subtitle}>Detalles: {result.detalles}</Text>
             </View>
           ))}
         </View>

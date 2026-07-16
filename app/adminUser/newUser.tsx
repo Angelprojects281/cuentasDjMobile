@@ -28,8 +28,8 @@ export default function newUser() {
     }
 
     Alert.alert(
-      "Deseas crear el usuario",
-      `guardando los datos para el usuario ${idUsuarios} con el rol ${Rol}`,
+      "¿Desea crear el usuario?",
+      `Se guardarán los datos para el usuario ${idUsuarios} con el rol ${Rol}.`,
       [
         { text: "Cancelar", style: "cancel" },
         {
@@ -70,7 +70,7 @@ export default function newUser() {
 
       router.push("./adminUsers");
     } catch (error) {
-      Alert.alert("Error", "algo salio mal, intente mas tarde");
+      Alert.alert("Error", "Algo salió mal. Inténtelo más tarde.");
     }
   };
 
@@ -78,9 +78,7 @@ export default function newUser() {
     <View style={styles.container}>
       <StatusBar style={"light"}></StatusBar>
       <Image source={logo} style={styles.logo}></Image>
-      <Text style={styles.tittle}>
-        Ingrese los datos para crear un usuario:
-      </Text>
+      <Text style={styles.title}>Ingrese los datos para crear un usuario:</Text>
       <Picker
         selectedValue={Rol}
         onValueChange={(itemValue) => {
@@ -88,7 +86,7 @@ export default function newUser() {
         }}
         style={styles.input}
       >
-        <Picker.Item label="Seleccione Rol" value="" />
+        <Picker.Item label="Seleccione un rol" value="" />
         <Picker.Item label="Administrador" value="admin" />
         <Picker.Item label="Regular" value="regular" />
         <Picker.Item label="Auditor" value="auditor" />
