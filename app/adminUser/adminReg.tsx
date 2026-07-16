@@ -202,57 +202,57 @@ export default function adminReg() {
             <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>Turno: {produccion.turno}</Text>
             </View>
-            <View style={styles.secundaryContainer}>
+            <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>
                 Fecha: {produccion.fecha_prod.split("T")[0]}
               </Text>
             </View>
-            <View style={styles.secundaryContainer}>
+            <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>
                 Proveedor de rinde: {produccion.proveedor_rinde}
               </Text>
             </View>
-            <View style={styles.secundaryContainer}>
+            <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>
                 Lote de rinde: {produccion.lote_rinde}
               </Text>
             </View>
-            <View style={styles.secundaryContainer}>
+            <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>
                 Cañecas de rinde utilizadas: {produccion.num_canecas_rinde}
               </Text>
             </View>
-            <View style={styles.secundaryContainer}>
+            <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>
                 Litros de rinde utilizados: {produccion.litros_caneca_rinde}
               </Text>
             </View>
-            <View style={styles.secundaryContainer}>
+            <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>
                 Griego descolgado recibido: {produccion.griego_inicio}
               </Text>
             </View>
-            <View style={styles.secundaryContainer}>
+            <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>
                 Griego agitado recibido: {produccion.agitado_inicio}
               </Text>
             </View>
-            <View style={styles.secundaryContainer}>
+            <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>
                 Cañecas de griego gastadas: {produccion.suma_baches}
               </Text>
             </View>
-            <View style={styles.secundaryContainer}>
+            <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>
                 Kilos de griego gastados: {produccion.kilos_baches_total}
               </Text>
             </View>
-            <View style={styles.secundaryContainer}>
+            <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>
                 Cañecas agitadas entregadas: {produccion.agitadas_final}
               </Text>
             </View>
-            <View style={styles.secundaryContainer}>
+            <View style={styles.secondaryContainer}>
               <Text style={styles.subtitle}>
                 Cañecas descolgadas entregadas: {produccion.descolgadas_final}
               </Text>
@@ -281,7 +281,7 @@ export default function adminReg() {
         )}
 
         {mostrarBaches && (
-          <View style={styles.secundaryContainer}>
+          <View style={styles.secondaryContainer}>
             {baches.map((bache, index) => (
               <View key={index} style={styles.bacheContainer}>
                 <Text style={styles.subtitle}>
