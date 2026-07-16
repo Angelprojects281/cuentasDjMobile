@@ -145,6 +145,8 @@ export default function adminReg() {
       "Registro eliminado",
       "El registro ha sido eliminado exitosamente.",
     );
+
+    setProduccion(null);
   };
 
   return (

@@ -20,7 +20,7 @@
       "package": "com.angelprojects.cuentasdjMobile"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logotipo.png"
     },
     "plugins": [
       "expo-router",
