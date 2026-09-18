@@ -92,25 +92,28 @@ export default function newReg() {
   };
 
   const registro = async () => {
-    const res = await fetch("http://10.0.2.2:4000/api/crearRegistro", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      "https://cuentasdj.onrender.com/api/crearRegistro",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          turno,
+          fecha,
+          proveedorR,
+          loteR,
+          canecas20,
+          canecas60,
+          cdRecibidas,
+          caRecibidas,
+          cdEntregadas,
+          caEntregadas,
+          listaBaches,
+        }),
       },
-      body: JSON.stringify({
-        turno,
-        fecha,
-        proveedorR,
-        loteR,
-        canecas20,
-        canecas60,
-        cdRecibidas,
-        caRecibidas,
-        cdEntregadas,
-        caEntregadas,
-        listaBaches,
-      }),
-    });
+    );
 
     const data = await res.json();
 

@@ -28,7 +28,7 @@ export default function Login() {
         return;
       }
 
-      const res = await fetch("http://10.0.2.2:4000/api/login", {
+      const res = await fetch("https://cuentasdj.onrender.com/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

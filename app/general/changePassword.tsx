@@ -44,17 +44,20 @@ export default function changePassword() {
       return;
     }
 
-    const res = await fetch("http://10.0.2.2:4000/api/cambiarcontrasena", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      "https://cuentasdj.onrender.com/api/cambiarcontrasena",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          idUsuarios,
+          cNueva,
+          confirmC,
+        }),
       },
-      body: JSON.stringify({
-        idUsuarios,
-        cNueva,
-        confirmC,
-      }),
-    });
+    );
 
     const data = await res.json();
 
@@ -74,16 +77,19 @@ export default function changePassword() {
       Alert.alert("Error al confirmar el código", "Debe ingresar un código.");
       return;
     }
-    const res = await fetch("http://10.0.2.2:4000/api/verificarCodigo", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      "https://cuentasdj.onrender.com/api/verificarCodigo",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          idUsuarios,
+          codigo,
+        }),
       },
-      body: JSON.stringify({
-        idUsuarios,
-        codigo,
-      }),
-    });
+    );
 
     const data = await res.json();
 

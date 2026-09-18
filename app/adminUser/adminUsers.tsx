@@ -16,7 +16,9 @@ export default function adminUsers() {
   const router = useRouter();
   const ObtenerUsuarios = async () => {
     try {
-      const res = await fetch("http://10.0.2.2:4000/api/listarUsuarios");
+      const res = await fetch(
+        "https://cuentasdj.onrender.com/api/listarUsuarios",
+      );
 
       const data = await res.json();
 

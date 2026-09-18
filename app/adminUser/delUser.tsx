@@ -17,7 +17,9 @@ export default function delUser() {
   const [idUsuario, setIdUsuario] = useState<null | String>();
   const ObtenerUsuarios = async () => {
     try {
-      const res = await fetch("http://10.0.2.2:4000/api/listarUsuarios");
+      const res = await fetch(
+        "https://cuentasdj.onrender.com/api/listarUsuarios",
+      );
 
       const data = await res.json();
 
@@ -62,12 +64,15 @@ export default function delUser() {
   const delUser = async () => {
     try {
       const token = await SecureStore.getItemAsync("token");
-      const res = await fetch(`http://10.0.2.2:4000/api/usuario/${idUsuario}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await fetch(
+        `https://cuentasdj.onrender.com/api/usuario/${idUsuario}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
 
       const data = await res.json();
 

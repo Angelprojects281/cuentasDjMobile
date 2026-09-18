@@ -44,17 +44,20 @@ export default function newUser() {
 
   const registro = async () => {
     try {
-      const res = await fetch("http://10.0.2.2:4000/api/crearUsuario", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        "https://cuentasdj.onrender.com/api/crearUsuario",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            idUsuarios,
+            cNueva,
+            Rol,
+          }),
         },
-        body: JSON.stringify({
-          idUsuarios,
-          cNueva,
-          Rol,
-        }),
-      });
+      );
 
       const data = await res.json();
 

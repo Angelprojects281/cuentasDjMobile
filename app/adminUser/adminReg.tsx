@@ -73,7 +73,7 @@ export default function adminReg() {
       }
 
       const res = await fetch(
-        `http://10.0.2.2:4000/api/consultarRegistro?turno=${turno}&fecha=${fecha}`,
+        `https://cuentasdj.onrender.com/api/consultarRegistro?turno=${turno}&fecha=${fecha}`,
         {
           method: "GET",
         },
@@ -127,7 +127,7 @@ export default function adminReg() {
     const idProduccion = produccion.idProduccion;
 
     const res = await fetch(
-      `http://10.0.2.2:4000/api/eliminarRegistro/${idProduccion}`,
+      `https://cuentasdj.onrender.com/api/eliminarRegistro/${idProduccion}`,
       {
         method: "DELETE",
       },

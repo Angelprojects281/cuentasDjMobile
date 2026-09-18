@@ -47,7 +47,7 @@ export default function searchActivity() {
     }
 
     const res = await fetch(
-      `http://10.0.2.2:4000/api/consultarAuditoria?tipoActividad=${activityType}&fechaInicio=${fechaInicial}&fechaFin=${fechaFinal}`,
+      `https://cuentasdj.onrender.com/api/consultarAuditoria?tipoActividad=${activityType}&fechaInicio=${fechaInicial}&fechaFin=${fechaFinal}`,
       {
         method: "GET",
       },
